@@ -12,7 +12,7 @@
 const VIDEOS = [
   {
     title: "Oldboy(2003)",
-    driveId: "https://drive.google.com/file/d/1HP__avu1krPifBi5NXWuN0A-D3Wn-oom/view?usp=sharing",
+    driveId: "1HP__avu1krPifBi5NXWuN0A-D3Wn-oom/view?usp=sharing",
     thumbnail: ""
   },
 
