@@ -16,6 +16,11 @@
   <p class="site-sub">Private reel &middot; hosted here, played from Drive</p>
 </header>
 
+<div id="now-playing" class="now-playing" hidden>
+  Opened in a new tab: <strong id="now-playing-title"></strong>
+  &mdash; <a id="now-playing-link" href="#" target="_blank" rel="noopener">reopen</a>
+</div>
+
 <main>
   <div id="grid" class="grid"></div>
   <p id="empty-note" class="empty-note" hidden>
@@ -24,18 +29,8 @@
 </main>
 
 <footer class="site-foot">
-  <p>Access is controlled entirely by Google Drive sharing &mdash; only people you've added can play anything here.</p>
+  <p>Access is controlled entirely by Google Drive sharing &mdash; only people you've added can play anything here. Clicking a thumbnail opens it in Drive's own player in a new tab.</p>
 </footer>
-
-<div id="modal" class="modal" hidden>
-  <div class="modal-frame">
-    <button id="modal-close" class="modal-close" aria-label="Close player">&times;</button>
-    <div class="modal-video">
-      <iframe id="modal-iframe" src="" allow="autoplay" allowfullscreen frameborder="0"></iframe>
-    </div>
-    <p id="modal-title" class="modal-title"></p>
-  </div>
-</div>
 
 <script src="videos.js"></script>
 <script src="script.js"></script>
