@@ -5,7 +5,19 @@
   const nowPlayingTitle = document.getElementById('now-playing-title');
   const nowPlayingLink = document.getElementById('now-playing-link');
 
+  // Accepts a bare file ID, or a full Drive URL pasted by mistake
+  // (/file/d/ID/... or open?id=ID), and returns just the ID.
+  function extractDriveId(raw) {
+    if (!raw) return raw;
+    const fileMatch = raw.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    if (fileMatch) return fileMatch[1];
+    const openMatch = raw.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+    if (openMatch) return openMatch[1];
+    return raw.trim();
+  }
+
   const entries = (typeof VIDEOS !== 'undefined' ? VIDEOS : [])
+    .map(v => ({ ...v, driveId: extractDriveId(v.driveId) }))
     .filter(v => v.driveId && v.driveId !== 'PASTE_FILE_ID_HERE');
 
   if (entries.length === 0) {
