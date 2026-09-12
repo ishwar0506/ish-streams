@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Screening Room</title>
+<title>There are men, there are gods and then there is ISHWAR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,14 +12,10 @@
 <body>
 
 <header class="site-head">
+  <p class="site-eyebrow">Now Showing</p>
   <h1>Screening Room</h1>
   <p class="site-sub">Private reel &middot; hosted here, played from Drive</p>
 </header>
-
-<div id="now-playing" class="now-playing" hidden>
-  Opened in a new tab: <strong id="now-playing-title"></strong>
-  &mdash; <a id="now-playing-link" href="#" target="_blank" rel="noopener">reopen</a>
-</div>
 
 <main>
   <div id="grid" class="grid"></div>
@@ -29,8 +25,18 @@
 </main>
 
 <footer class="site-foot">
-  <p>Access is controlled entirely by Google Drive sharing &mdash; only people you've added can play anything here. Clicking a thumbnail opens it in Drive's own player in a new tab.</p>
+  <p>Access is controlled entirely by Google Drive sharing &mdash; only people you've added can play anything here.</p>
 </footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-frame">
+    <button id="modal-close" class="modal-close" aria-label="Close player">&times;</button>
+    <div class="modal-video">
+      <iframe id="modal-iframe" src="" allow="autoplay" allowfullscreen frameborder="0"></iframe>
+    </div>
+    <p id="modal-title" class="modal-title"></p>
+  </div>
+</div>
 
 <script src="videos.js"></script>
 <script src="script.js"></script>
