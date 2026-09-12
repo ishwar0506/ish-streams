@@ -61,4 +61,3 @@ const VIDEOS = [
   //   driveId: "1XyZ...",
   //   thumbnail: ""
   // },
-];
