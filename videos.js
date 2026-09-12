@@ -40,6 +40,12 @@ const VIDEOS = [
     link: "https://drive.google.com/file/d/1EwnPUCJwqfKMnrd9nsW8njlIdPpgNjbE/view?usp=drive_link",
     thumbnail: "https://image.tmdb.org/t/p/w600_and_h900_face/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
   },
+  {
+    title: "The Batman (2022)",
+    link: "https://drive.google.com/file/d/1T3k98biYwiJ7cgTz4kfV-2kBHE7jJtmv/view?usp=drive_link",
+    thumbnail: "https://image.tmdb.org/t/p/w600_and_h900_face/3WGuOIXrw8QHSUF2RyIa1kHAWfk.jpg"
+  },
+
 
   // Copy a block above and paste it below to add more, e.g.:
   // {
