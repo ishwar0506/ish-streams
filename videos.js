@@ -45,12 +45,22 @@ const VIDEOS = [
     link: "https://drive.google.com/file/d/1T3k98biYwiJ7cgTz4kfV-2kBHE7jJtmv/view?usp=drive_link",
     thumbnail: "https://image.tmdb.org/t/p/w600_and_h900_face/3WGuOIXrw8QHSUF2RyIa1kHAWfk.jpg"
   },
-
+  {
+    title: "Openheimer",
+    link: "https://u.pcloud.link/publink/show?code=XZ68SzJZqoLcyj1tomRh5gg7rG8y4mypWpCk",
+    thumbnail: "https://theposterdb.com/api/assets/429777/view"
+  },
 
   // Copy a block above and paste it below to add more, e.g.:
   // {
-  //   title: "Another video",
+  //   title: "Another video (Drive)",
   //   link: "https://drive.google.com/file/d/1XyZ.../view?usp=sharing",
   //   thumbnail: ""
   // },
+  // {
+  //   title: "Another video (pCloud)",
+  //   link: "https://u.pcloud.link/publink/show?code=XXXXXXXXXX",
+  //   thumbnail: "https://your-poster-image-url.jpg"
+  // },
+
 ];
