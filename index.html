@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CRAZY ASS</title>
+<title>COMFORT ZONE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,9 +12,12 @@
 <body>
 
 <header class="site-head">
-  <p class="site-eyebrow">Now Showing</p>
-  <h1>There are men, there are gods and then there is ISH</h1>
-  <p class="site-sub">Thank me later &middot; hehe</p>
+  <p class="site-eyebrow">YOU KNOW ME</p>
+  <h1>I see Ants</h1>
+  <p class="site-sub">Watch the movie &middot; to understand &amp; REFERENCE</p>
+  <div class="search-row">
+    <input type="search" id="search" placeholder="Search the reel&hellip;" aria-label="Search videos">
+  </div>
 </header>
 
 <main>
@@ -22,10 +25,13 @@
   <p id="empty-note" class="empty-note" hidden>
     Nothing on the reel yet. Add an entry to <code>videos.js</code> to get started.
   </p>
+  <p id="no-results" class="empty-note" hidden>
+    Nothing matches that search.
+  </p>
 </main>
 
 <footer class="site-foot">
-  <p>Access is controlled entirely by Google Drive sharing &mdash; only people you've added can play anything here.</p>
+  <p>Drive videos are restricted to people you've added in Drive's sharing settings. pCloud videos rely on the link itself &mdash; only share those links with people you trust.</p>
 </footer>
 
 <div id="modal" class="modal" hidden>
