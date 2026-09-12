@@ -1,12 +1,13 @@
 :root {
-  --bg: #17181a;
-  --card: #201f22;
-  --card-hover: #26252a;
-  --ink: #f1ede4;
-  --ink-dim: #a9a49a;
-  --accent: #e3a83b;
-  --accent-2: #52736b;
-  --line: #3a3935;
+  --bg: #131315;
+  --bg-2: #1b1a1c;
+  --card: #1d1c1f;
+  --card-hover: #252428;
+  --ink: #f3efe6;
+  --ink-dim: #a39d92;
+  --accent: #e8ac3f;
+  --accent-2: #5c8079;
+  --line: #38363a;
 }
 
 * { box-sizing: border-box; }
@@ -15,10 +16,14 @@ html { color-scheme: dark; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(232, 172, 63, 0.10), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 0%, rgba(92, 128, 121, 0.10), transparent 55%),
+    var(--bg);
   color: var(--ink);
   font-family: 'Work Sans', sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -26,57 +31,71 @@ body {
 }
 
 .site-head {
-  padding: 3rem 1.75rem 1.5rem;
+  padding: 3.5rem 1.75rem 2rem;
   border-bottom: 1px solid var(--line);
+}
+
+.site-eyebrow {
+  margin: 0 0 0.4rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-2);
 }
 
 .site-head h1 {
   font-family: 'Big Shoulders Display', sans-serif;
   font-weight: 900;
-  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-size: clamp(2.8rem, 6.5vw, 4.6rem);
   letter-spacing: 0.01em;
   line-height: 0.9;
   margin: 0;
   color: var(--accent);
+  text-shadow: 0 0 60px rgba(232, 172, 63, 0.18);
 }
 
 .site-sub {
-  margin: 0.6rem 0 0;
+  margin: 0.7rem 0 0;
   color: var(--ink-dim);
   font-size: 0.95rem;
 }
 
 main {
-  max-width: 1180px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 2.25rem 1.75rem 3rem;
+  padding: 2.5rem 1.75rem 3rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 1.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem 1.4rem;
 }
 
 .card {
+  position: relative;
   background: var(--card);
   border: 1px solid var(--line);
+  padding: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .card:hover, .card:focus-visible {
-  background: var(--card-hover);
-  transform: translateY(-3px);
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 18px 34px -14px rgba(0, 0, 0, 0.65);
 }
 
-.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card:focus-visible { outline: none; }
 
 .sprockets {
-  height: 14px;
-  background-image: radial-gradient(circle, var(--bg) 2.5px, transparent 2.6px);
-  background-size: 18px 14px;
-  background-position: 9px center;
+  height: 10px;
+  background-image: radial-gradient(circle, var(--bg) 2px, transparent 2.2px);
+  background-size: 15px 10px;
+  background-position: 7px center;
   background-repeat: repeat-x;
   background-color: var(--card);
 }
@@ -87,8 +106,8 @@ main {
 
 .thumb-wrap {
   position: relative;
-  aspect-ratio: 16 / 9;
-  background: #0e0e0f;
+  aspect-ratio: 2 / 3;
+  background: #0d0d0e;
   overflow: hidden;
 }
 
@@ -97,11 +116,12 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .card:hover .thumb-wrap img, .card:focus-visible .thumb-wrap img {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  filter: brightness(0.55);
 }
 
 .thumb-fallback {
@@ -114,34 +134,47 @@ main {
   text-align: center;
   color: var(--ink-dim);
   font-size: 0.85rem;
+  background: linear-gradient(160deg, #201f22, #131214);
+}
+
+.title-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.6rem 0.85rem 0.75rem;
+  background: linear-gradient(to top, rgba(10, 10, 11, 0.92), rgba(10, 10, 11, 0.55) 60%, transparent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
 }
 
 .play-mark {
   position: absolute;
-  right: 12px;
-  bottom: 12px;
-  width: 34px;
-  height: 34px;
-  background: rgba(23, 24, 26, 0.75);
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%) scale(0.85);
+  background: rgba(19, 19, 21, 0.55);
   border: 1px solid var(--accent);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.card:hover .play-mark, .card:focus-visible .play-mark {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .play-mark::after {
   content: "";
   border-style: solid;
-  border-width: 6px 0 6px 10px;
+  border-width: 8px 0 8px 13px;
   border-color: transparent transparent transparent var(--accent);
-  margin-left: 2px;
-}
-
-.card-title {
-  padding: 0.85rem 1rem 1.05rem;
-  font-size: 0.98rem;
-  font-weight: 500;
-  color: var(--ink);
+  margin-left: 3px;
 }
 
 .empty-note {
@@ -156,7 +189,7 @@ main {
 }
 
 .site-foot {
-  max-width: 1180px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.75rem 2.5rem;
   color: var(--ink-dim);
@@ -165,22 +198,61 @@ main {
   padding-top: 1.25rem;
 }
 
-/* Now-playing strip */
-.now-playing {
-  background: var(--card);
-  border-bottom: 1px solid var(--line);
-  color: var(--ink-dim);
-  font-size: 0.9rem;
-  padding: 0.7rem 1.75rem;
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 8, 9, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 10;
 }
 
-.now-playing[hidden] { display: none; }
+.modal[hidden] { display: none; }
 
-.now-playing strong {
+.modal-frame {
+  width: 100%;
+  max-width: 960px;
+  animation: pop-in 0.18s ease-out;
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-video {
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--line);
+}
+
+.modal-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.modal-title {
   color: var(--ink);
-  font-weight: 500;
+  margin: 0.9rem 0.1rem 0;
+  font-size: 0.95rem;
 }
 
-.now-playing a {
-  color: var(--accent);
+.modal-close {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  width: 36px;
+  height: 36px;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
 }
+
+.modal-close:hover { border-color: var(--accent); color: var(--accent); }
