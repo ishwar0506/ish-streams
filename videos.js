@@ -13,7 +13,7 @@ const VIDEOS = [
   {
     title: "Oldboy(2003)",
     driveId: "1HP__avu1krPifBi5NXWuN0A-D3Wn-oom/view?usp=sharing",
-    thumbnail: ""
+    thumbnail: "https://image.tmdb.org/t/p/original/p4AqYjv70O1KjKA47x1Tk5i4djL.jpg"
   },
 
   // Copy the block above and paste it below to add more, e.g.:
