@@ -6,8 +6,8 @@
   const modalTitle = document.getElementById('modal-title');
   const modalClose = document.getElementById('modal-close');
 
-  // Accepts a bare file ID, or a full Drive URL pasted by mistake
-  // (/file/d/ID/... or open?id=ID), and returns just the ID.
+  // Pulls the file ID out of a full Drive share link (or accepts a bare
+  // ID too, in case someone pastes just that).
   function extractDriveId(raw) {
     if (!raw) return raw;
     const fileMatch = raw.match(/\/d\/([a-zA-Z0-9_-]+)/);
@@ -18,8 +18,8 @@
   }
 
   const entries = (typeof VIDEOS !== 'undefined' ? VIDEOS : [])
-    .map(v => ({ ...v, driveId: extractDriveId(v.driveId) }))
-    .filter(v => v.driveId && v.driveId !== 'PASTE_FILE_ID_HERE');
+    .map(v => ({ ...v, driveId: extractDriveId(v.link) }))
+    .filter(v => v.driveId && v.driveId !== 'PASTE_DRIVE_LINK_HERE');
 
   if (entries.length === 0) {
     emptyNote.hidden = false;
