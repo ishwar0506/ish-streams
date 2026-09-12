@@ -1,16 +1,5 @@
 // Add one entry per video. That's the only editing you need to do.
 //
-// driveId   - the file ID from the Google Drive share link
-//             e.g. https://drive.google.com/file/d/1AbCdEfGhIjKlMnOpQrSt/view
-//                                                    ^^^^^^^^^^^^^^^^^^^^ this part
-// title     - shown under the thumbnail
-// thumbnail - optional. Leave as "" to auto-generate a thumbnail from Drive.
-//             If Drive's auto-thumbnail doesn't load (it sometimes won't for
-//             files shared with specific people only), paste your own image
-//             URL here instead.
-
-// Add one entry per video. That's the only editing you need to do.
-//
 // link      - just paste the whole Google Drive share link, e.g.
 //             https://drive.google.com/file/d/1AbCdEfGhIjKlMnOpQrSt/view?usp=sharing
 //             The site figures out the file ID from it automatically.
@@ -52,12 +41,10 @@ const VIDEOS = [
     thumbnail: "https://image.tmdb.org/t/p/w600_and_h900_face/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
   },
 
-];
-
-
-  // Copy the block above and paste it below to add more, e.g.:
+  // Copy a block above and paste it below to add more, e.g.:
   // {
   //   title: "Another video",
-  //   driveId: "1XyZ...",
+  //   link: "https://drive.google.com/file/d/1XyZ.../view?usp=sharing",
   //   thumbnail: ""
   // },
+];
