@@ -51,7 +51,7 @@ const VIDEOS = [
     thumbnail: "https://theposterdb.com/api/assets/429777/view"
   },
   {
-    title: "Once upon a time in Hollywood",
+    title: "Once upon a time in Hollywood (2019)",
     link: "https://u.pcloud.link/publink/show?code=XZbbSzJZVppqnUhEsV8jv01ewV7RtkUqrA8k",
     thumbnail: "https://image.tmdb.org/t/p/original/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
   },
