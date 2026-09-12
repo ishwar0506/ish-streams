@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screening Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <h1>Screening Room</h1>
+  <p class="site-sub">Private reel &middot; hosted here, played from Drive</p>
+</header>
+
+<main>
+  <div id="grid" class="grid"></div>
+  <p id="empty-note" class="empty-note" hidden>
+    Nothing on the reel yet. Add an entry to <code>videos.js</code> to get started.
+  </p>
+</main>
+
+<footer class="site-foot">
+  <p>Access is controlled entirely by Google Drive sharing &mdash; only people you've added can play anything here.</p>
+</footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-frame">
+    <button id="modal-close" class="modal-close" aria-label="Close player">&times;</button>
+    <div class="modal-video">
+      <iframe id="modal-iframe" src="" allow="autoplay" allowfullscreen frameborder="0"></iframe>
+    </div>
+    <p id="modal-title" class="modal-title"></p>
+  </div>
+</div>
+
+<script src="videos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
