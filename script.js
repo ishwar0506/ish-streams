@@ -1,9 +1,10 @@
 (function () {
   const grid = document.getElementById('grid');
   const emptyNote = document.getElementById('empty-note');
-  const nowPlaying = document.getElementById('now-playing');
-  const nowPlayingTitle = document.getElementById('now-playing-title');
-  const nowPlayingLink = document.getElementById('now-playing-link');
+  const modal = document.getElementById('modal');
+  const modalIframe = document.getElementById('modal-iframe');
+  const modalTitle = document.getElementById('modal-title');
+  const modalClose = document.getElementById('modal-close');
 
   // Accepts a bare file ID, or a full Drive URL pasted by mistake
   // (/file/d/ID/... or open?id=ID), and returns just the ID.
@@ -51,28 +52,41 @@
     const playMark = document.createElement('span');
     playMark.className = 'play-mark';
 
+    const titleOverlay = document.createElement('div');
+    titleOverlay.className = 'title-overlay';
+    titleOverlay.textContent = video.title;
+
     thumbWrap.appendChild(img);
     thumbWrap.appendChild(playMark);
-
-    const titleEl = document.createElement('div');
-    titleEl.className = 'card-title';
-    titleEl.textContent = video.title;
+    thumbWrap.appendChild(titleOverlay);
 
     card.appendChild(sprockets);
     card.appendChild(thumbWrap);
-    card.appendChild(titleEl);
 
-    card.addEventListener('click', () => playVideo(video));
+    card.addEventListener('click', () => openModal(video));
 
     grid.appendChild(card);
   });
 
-  function playVideo(video) {
-    const url = `https://drive.google.com/file/d/${video.driveId}/view`;
-    window.open(url, '_blank', 'noopener');
-
-    nowPlayingTitle.textContent = video.title;
-    nowPlayingLink.href = url;
-    nowPlaying.hidden = false;
+  function openModal(video) {
+    modalIframe.src = `https://drive.google.com/file/d/${video.driveId}/preview`;
+    modalTitle.textContent = video.title;
+    modal.hidden = false;
+    modalClose.focus();
+    document.body.style.overflow = 'hidden';
   }
+
+  function closeModal() {
+    modal.hidden = true;
+    modalIframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
 })();
