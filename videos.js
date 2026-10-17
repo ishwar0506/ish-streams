@@ -55,6 +55,16 @@ const VIDEOS = [
     link: "https://u.pcloud.link/publink/show?code=XZbbSzJZVppqnUhEsV8jv01ewV7RtkUqrA8k",
     thumbnail: "https://image.tmdb.org/t/p/original/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
   },
+  {
+    title: "The Lego Batman",
+    link: "https://u.pcloud.link/publink/show?code=XZGR4bJZjnwARq977s00cVq9rAen4HBcmEE7",
+    thumbnail: "https://theposterdb.com/api/assets/99633/view"
+  },
+  {
+    title: "JOKER",
+    link: "https://u.pcloud.link/publink/show?code=XZYL4bJZ8uuM0KLXjufGpqbWkK9xsmyoCbpV",
+    thumbnail: "https://image.tmdb.org/t/p/original/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+  },
 
   // Copy a block above and paste it below to add more, e.g.:
   // {
